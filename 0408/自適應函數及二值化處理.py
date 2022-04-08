@@ -1,7 +1,8 @@
 import cv2
 import numpy as np
+import sys
 from sklearn.metrics import zero_one_loss
-src = cv2.imread("minnesota.jpg",cv2.IMREAD_GRAYSCALE)     
+src = cv2.imread(sys.path[0]+"/minnesota.jpg",cv2.IMREAD_GRAYSCALE)     
 thresh = 127                                            
 maxval = 255      
                                         

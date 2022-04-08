@@ -1,6 +1,6 @@
 import cv2
-
-src = cv2.imread("school.jpg",cv2.IMREAD_GRAYSCALE)     # 灰階讀取
+import sys
+src = cv2.imread(sys.path[0]+"/school.jpg",cv2.IMREAD_GRAYSCALE)     # 灰階讀取
 thresh = 127                                            # 閾值
 maxval = 255                                            # 定義像素最大值
 ret,dst = cv2.threshold(src,thresh,maxval,cv2.THRESH_BINARY)    # 二值化處理

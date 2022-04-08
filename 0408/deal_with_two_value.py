@@ -1,6 +1,7 @@
 import cv2 
 import numpy as np
-src= cv2.imread('number1.jpg')
+import sys
+src= cv2.imread(sys.path[0]+'/number1.jpg')
 ret,dst=cv2.threshold(src,127,255,cv2.THRESH_BINARY)
 cv2.imshow('src',src)
 print(ret)
