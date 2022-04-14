@@ -16,11 +16,11 @@ def act(event,x,y,flags,param):
 
     
     if event==cv2.EVENT_RBUTTONDOWN:
-        cv2.circle(img,(x,y),cr,(b,g,r),-1)
-    if event==cv2.EVENT_LBUTTONDBLCLK:
         cv2.circle(img,(x,y),cr,(b,g,r),2)
+    if event==cv2.EVENT_LBUTTONDBLCLK:
+        cv2.circle(img,(x,y),cr,(b,g,r),-1)
     if flags==9:
-        cv2.rectangle(img,(x,y),(x+cr,y+cr),(b,g,r),2)
+        cv2.rectangle(img,(x,y),(x+cr,y+cr),(b,g,r),-1)
     #print(event)
     #print(flags)
 r=0

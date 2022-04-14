@@ -4,43 +4,43 @@ import random
 import time
 
 def collision_with_apple(apple_position, score):
-    apple_position = [random.randrange(1,50)*10,random.randrange(1,50)*10]
+    apple_position = [random.randrange(1,65)*10,random.randrange(1,40)*10]
     score += 1
     return apple_position, score
-    # return score apple_postition with  tuple 
+    #回傳score及apple位置
 
 def collision_with_boundaries(snake_head):
-    if snake_head[0]>=500 or snake_head[0]<0 or snake_head[1]>=500 or snake_head[1]<0 :
+    if snake_head[0]>=650 or snake_head[0]<0 or snake_head[1]>=400 or snake_head[1]<0 :
         return 1
     else:
         return 0
-    # set the end game side
+    # 檢測有無碰到邊界
 def collision_with_self(snake_position):
     snake_head = snake_position[0]
     if snake_head in snake_position[1:]:
         return 1
     else:
         return 0
-
-img = np.zeros((500,500,3),dtype='uint8')
-# Initial Snake and Apple position
+    # 檢測有無碰到自己
+img = np.zeros((400,650,3),dtype='uint8')
+# 初始化蘋果跟蛇的位置
 snake_position = [[250,250],[240,250],[230,250]]
-apple_position = [random.randrange(1,50)*10,random.randrange(1,50)*10]
+apple_position = [random.randrange(1,65)*10,random.randrange(1,40)*10]
 score = 0
 prev_button_direction = 1
 button_direction = 1
 snake_head = [250,250]
 while True:
-    cv2.imshow('a',img)
+    cv2.imshow('snackline',img)
     cv2.waitKey(1)
-    img = np.zeros((500,500,3),dtype='uint8')
-    # Display Apple
-    cv2.rectangle(img,(apple_position[0],apple_position[1]),(apple_position[0]+10,apple_position[1]+10),(0,0,255),3)
-    # Display Snake
+    img = np.zeros((400,650,3),dtype='uint8')
+    #創出蘋果
+    cv2.circle(img, (apple_position[0], apple_position[1]), 5, (0, 0, 255), -1)
+    # 畫蛇
     for position in snake_position:
-        cv2.rectangle(img,(position[0],position[1]),(position[0]+10,position[1]+10),(0,255,0),3)
+        cv2.circle(img,(position[0],position[1]),5,(0,255,0),3)
+    cv2.putText(img, 'Your score {}'.format(score), (380, 65), cv2.FONT_HERSHEY_SIMPLEX, 1, (46, 62, 88), 2)
     
-    # Takes step after fixed time
     t_end = time.time() + 0.2
     k = -1
     while time.time() < t_end:
@@ -49,8 +49,7 @@ while True:
         else:
             continue
             
-    # 0-Left, 1-Right, 3-Up, 2-Down, q-Break
-    # a-Left, d-Right, w-Up, s-Down
+    #根據偵測到的事件，儲存上下左右
 
     if k == ord('a') and prev_button_direction != 1:
         button_direction = 0
@@ -66,7 +65,7 @@ while True:
         button_direction = button_direction
     prev_button_direction = button_direction
 
-    # Change the head position based on the button direction
+    # 根據狀態做出相應行動
     if button_direction == 1:
         snake_head[0] += 10
     elif button_direction == 0:
@@ -76,7 +75,7 @@ while True:
     elif button_direction == 3:
         snake_head[1] -= 10
 
-    # Increase Snake length on eating apple
+    # 身體碰到蘋果就加一分，並亂數生成蘋果位置
     if snake_head == apple_position:
         apple_position, score = collision_with_apple(apple_position, score)
         snake_position.insert(0,list(snake_head))
@@ -85,14 +84,13 @@ while True:
         snake_position.insert(0,list(snake_head))
         snake_position.pop()
      
-    # On collision kill the snake and print the score
+    # 碰到邊界或碰到自身
     if collision_with_boundaries(snake_head) == 1 or collision_with_self(snake_position) == 1:
-        font = cv2.FONT_HERSHEY_SIMPLEX
-        img = np.zeros((500,500,3),dtype='uint8')
-        cv2.putText(img,'Your Score is {}'.format(score),(140,250), font, 1,(255,255,255),2,cv2.LINE_AA)
-        cv2.imshow('a',img)
+        img = np.zeros((400,650,3),dtype='uint8')
+        cv2.putText(img, 'GAME OVER', (125, 165), cv2.FONT_HERSHEY_SIMPLEX, 2, (100, 215, 250), 2)
+        cv2.putText(img, 'Your score {}'.format(score), (125, 265), cv2.FONT_HERSHEY_SIMPLEX, 2, (46, 62, 88), 2)
+        cv2.imshow('snackline',img)
         cv2.waitKey(0)
-        cv2.imwrite('D:/downloads/ii.jpg',img)
         break
         
 cv2.destroyAllWindows()
