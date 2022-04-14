@@ -45,7 +45,7 @@ while True:
     k = -1
     while time.time() < t_end:
         if k == -1:
-            k = cv2.waitKey(125)
+            k = cv2.waitKey(1)
         else:
             continue
             
