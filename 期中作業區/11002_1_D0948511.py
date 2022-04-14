@@ -38,7 +38,7 @@ while True:
     cv2.circle(img, (apple_position[0], apple_position[1]), 5, (0, 0, 255), -1)
     # 畫蛇
     for position in snake_position:
-        cv2.circle(img,(position[0],position[1]),5,(0,255,0),3)
+        cv2.circle(img,(position[0],position[1]),5,(0,255,0),-1)
     cv2.putText(img, 'Your score {}'.format(score), (380, 65), cv2.FONT_HERSHEY_SIMPLEX, 1, (46, 62, 88), 2)
     
     t_end = time.time() + 0.2
