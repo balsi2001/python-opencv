@@ -41,11 +41,13 @@ while True:
         cv2.circle(img,(position[0],position[1]),5,(0,255,0),-1)
     cv2.putText(img, 'Your score {}'.format(score), (380, 65), cv2.FONT_HERSHEY_SIMPLEX, 1, (46, 62, 88), 2)
     
-    t_end = time.time() + 0.1
+    t_end = time.time() + 0.2
     k = -1
     while time.time() < t_end:
         if k == -1:
             k = cv2.waitKey(1)
+        else:
+            continue
             
     #根據偵測到的事件，儲存上下左右
 
@@ -59,6 +61,8 @@ while True:
         button_direction = 2
     elif k == ord('q'):
         break
+    else:
+        button_direction = button_direction
     prev_button_direction = button_direction
 
     # 根據狀態做出相應行動
@@ -74,13 +78,11 @@ while True:
     # 身體碰到蘋果就加一分，並亂數生成蘋果位置
     if snake_head == apple_position:
         apple_position, score = collision_with_apple(apple_position, score)
-        snake_position=[list(snake_head),*snake_position]
-        #print(snake_position)
-        print(snake_position)
+        snake_position.insert(0,list(snake_head))
+
     else:
-        snake_position=[list(snake_head)]+snake_position
-        #print(snake_position)
-        del snake_position[-1]
+        snake_position.insert(0,list(snake_head))
+        snake_position.pop()
      
     # 碰到邊界或碰到自身
     if collision_with_boundaries(snake_head) == 1 or collision_with_self(snake_position) == 1:
