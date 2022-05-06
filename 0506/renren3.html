@@ -1,25 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 TRANSITIONAL//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 TRANSITIONAL//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_TW" lang="zh_TW">
 <head>
+<title>Feng Chia University Library</title>
+<base target="_self"/>
 <link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
 <link rel="stylesheet" type="text/css" href="/screens/styles.css" />
-<script type="text/javascript" src="/scripts/elcontent.js">
-</script>
+<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
 <script type="text/javascript" src="/scripts/common.js">
 </script>
 <script type="text/javascript" src="/scripts/features.js">
 </script>
+<script type="text/javascript" src="/scripts/elcontent.js">
+</script>
 
-<title>逢甲大學圖書館館藏目錄 - 讀者個人借閱記錄 / 續借</title>
-<base target="_self"/>
-<link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css" />
-<link rel="stylesheet" type="text/css" href="/screens/styles.css" />
-<link rel="stylesheet" type="text/css" href="/screens/styles_sh.css" />
-<link rel="shortcut icon" type="ximage/icon" href="/screens/favicon.ico" />
-<script language="JavaScript" type="text/javascript" src="/scripts/common.js"></script>
-<script language="JavaScript" type="text/javascript" src="/scripts/features.js"></script>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /><script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script><script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js" integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw=" crossorigin="anonymous"></script><script language="Javascript" type="text/javascript" src="/screens/fcu_webpac.js"></script>
 </head>
-<body onLoad='if (document.forms.length > 0) { for (var i=0; i<document.forms[0].elements.length; i++) { if (document.forms[0].elements[i].type == "text") { document.forms[0].elements[i].focus(); document.forms[0].elements[i].select(); return; } } }'>
+<body  >
 <!--Begin the top logo block-->
 <!--TIP: this data should match the data used by the TOPLOGO web option-->
 <!--You will need to make any changes to all static HTML pages and to toplogo.html.-->
@@ -66,88 +61,75 @@
 			</div>
 			<div class="box-tm" id="tm-rl">
 				<ul>
-				<li><a class="first" href="http://fcu-finder.lib.fcu.edu.tw/coll/shelves/shelf-se201905chi.html" target="_blank">新進特選書</a></li>
-				<li><a class="last" href="http://web.lib.fcu.edu.tw/ni" target="_blank">每月新上架</a></li>
+  			<li><a class="first" href="http://fcu-finder.lib.fcu.edu.tw/coll/shelves/shelf-se201905chi.html" target="_blank">新進特選書</a></li>
+  			<li><a class="last" href="http://web.lib.fcu.edu.tw/ni" target="_blank">每月新上架</a></li>
 				</ul>
 			</div>
 			<div class="box-tm" id="tm-wf">
 				<ul>
-				<li><a class="first" href="/patroninfo*cht">個人借閱記錄 / 續借</a></li>
+				<!-- <li><a class="first" href="/patroninfo*cht">個人借閱記錄 / 續借</a></li> -->
 				<li><a href="http://webii.lib.fcu.edu.tw/coba/r_forms/create" target="_blank">人言/福星書庫調閱申請表</a></li>
-				<li><a href="http://recommend.lib.fcu.edu.tw/weblink/">資料薦購</a></li>
+				<li><a href="http://recommend.lib.fcu.edu.tw/weblink/" target="_blank">資料薦購</a></li>
 				<li><a class="last" href="mailto:library@fcu.edu.tw">Email館員</a></li>
 				</ul>
 			</div>
 			<div class="vcb">&nbsp;</div>
 			</div>
+			<div id="box-m4">
+				<div id="panel-login-btns"><!-- Start: login buttons panel -->
+<a href="/logout~S9*cht?">登出</a>
+<!--this is customized <screens/toplogo_loggedin_cht.html>-->
+					|
+<a href="/patroninfo~S9*cht/1178687/top/">返回你的記錄</a>
+					|
+					<a href="/search*cht">重新查詢</a>
+				</div><!-- End: login buttons panel -->
+			</div>
 		</div><!-- End: top panel including top menu -->
 	</div><!-- End: header block -->
 	<div id="blk-main"><div id="blk-content"><!-- Start: main and content block -->
 <!--End the top logo block-->
+
+<div class="login-msg">您已登入 Feng Chia University Library, 蔣佳韋 先生/小姐</div><br />
+<br />
+<!--this is customized <screens/patronview_web_cht.html>-->
+<link rel="stylesheet" type="text/css" href="/screens/styles_sh.css" />
 		<div id="panel-srchhelp-l">
 			<div id="box-sidemenu">
 				<ul>
-					<li><a href="/search*cht/">快速查詢</a></li>
-					<li><a href="/search*cht/t">書名/刊名查詢</a></li>
-					<li><a href="/search*cht/a">作者查詢</a></li>
-					<li><a href="/search*cht/q">作者/書名查詢</a></li>
-					<li><a href="/search*cht/d">主題查詢</a></li>
-					<li><a href="/search*cht/X">關鍵字查詢</a></li>
-					<li><a href="/search*cht/i">ISBN/ISSN</a></li>
-					<li><a href="/search*cht/c">索書號 [中文]</a></li>
-					<li><a href="/search*cht/m">索書號 [西文]</a></li>
-					<li><a href="/search*cht/e">出版者</a></li>
-					<li><a href="/search*cht/g">出版品編號</a></li>
-					<li><a href="/search*cht/r">指定參考用書 [依課程]</a></li>
-					<li><a href="/search*cht/p">指定參考用書 [依教師]</a></li>
-					<li><a href="/screens*cht/guides_cht.html">使用指引</a></li>
+					<li>
+<a href="#" onClick="return open_new_window( '/patroninfo~S9*cht/1178687/newpin' )">修改你的密碼</a>
+					</li>
+					<li>
+<a href="#" onClick="return open_new_window( '/patroninfo~S9*cht/1178687/modpinfo' )">修改個人資料</a>
+					</li>
+					<li>
+<a href="/patroninfo~S9*cht/1178687/searchcatalog" target="_self">查詢目錄</a>
+					</li>
+					<li>
+<a href="/patroninfo~S9*cht/1178687/getpsearches" target="_self">較合意的查詢</a>
+					</li>
+					<li>
+<a href="/patroninfo~S9*cht/1178687/readinghistory" target="_self">個人借閱歷史</a>
+					</li>
+<li>
+<a href="/patroninfo~S9*cht/1178687/mylists" target="_self">我的列表</a>
+</li>
+<li>
+<a href="/patroninfo~S9*cht/1178687/patrate" target="_self"><span class="button" id="ICON_PATRATE"><img src="/screens/patrate.gif" alt=""><span class="buttonText">My Ratings</span></span></a>
+</li>
 				</ul>
 			</div>
 		</div>
 		<div id="panel-srchhelp-r">
-			<h2><span class="bg-black">認證登入表單</span></h2>
-			<p>本認證登入表單使用於欲進行個人借閱現況記錄查詢、館藏續借、資料薦購、線上預約等功能之前。</p>
-			<div id="pat-login">
-<!--this is customized <screens/pverify_web_cht.html>-->
-				<h3>請輸入下列個人認證資訊：</h3>
-				<form id="frm-login" method="post">
-					<p>
-<label for="code"><span id="codeprompt">請輸入讀者證號</span></label><input name="code" id="" type="PASSWORD" value="" size="40" maxlength="40">					</p>
-					<p class="help">
-						請輸入完整學號8碼，或教職員證號6碼。
-					</p>
-					<p>
-<label for="pin"><span id="pinprompt">請輸入密碼</span></label><input name="pin" id="" type="PASSWORD" value="" size="40" maxlength="64">					</p>
-					<p class="help">
-						<strong style="color: #ff0000;">輸入密碼，請注意：</strong><br />
-						預設為身分證末四碼，外籍師生為出生月日四碼。重設密碼長度限制 4-12 位，可混合使用英文字母及數字，勿使用符號設定密碼。
-					</p>
-					<p style="margin-bottom: 36px;">
-						<input name="submit" type="SUBMIT" value="送出" class="btn" style="margin-bottom: 15px;" /><br />
-<a href="#" onclick="return replace_or_redraw( '/pinreset~S9*cht' )">忘記您的個人密碼﹖</a>					</p>
-				</form>
+			<div id="blk-pat-info">
+<strong>蔣佳韋</strong><br />
+D09485110<br />
+D0948511<br />
+chooth333@gmail.com<br />
+有效期限:07-31-2028<br />
 			</div>
-			<div id="pat-login-help">
-				<h3>!!提醒您!!</h3>
-				<ol>
-					<li>密碼問題：
-						<p>如果您忘記密碼，請點選「<a href="/pinreset*cht">重設密碼</a>」選項重新設定。</p>
-					</li>
-					<li>續借:
-						<ol type="a">
-							<li>請於圖書<span class="warning">到期日前</span>自行辦理線上續借，並請留意<span class="warning">新的到期日</span>。(<span class="warning">新的到期日 = 續借日 + 可借用天數，例如: 2021年11月20日進行續借，若可借用天數為 14 天，則 11/20 + 14 = 12/4，新的到期日為 2021年12月4日。</span>)</li>
-							<li>還書寛限期(三天)內不提供線上續借服務。</li>
-							<li>執行線上續借後, 請確認您要續借的館藏的到期日, <span class="warning">若無產生新的到期日, 表示此館藏續借失敗</span>(續借失敗的原因包括：續借次數超過、有其他讀者預約...等), 請儘速歸還, 以免逾期受罰.</li>
-						</ol>
-					</li>
-					<li>借還書電子郵件通知(E-mail notice)： 
-						<ol type="a">
-							<li>借還書電子郵件(E-mail notice)通知只是圖書館之提醒服務，讀者仍應經常查詢個人借閱狀況，以維護個人借書權益，避免產生逾期罰款。<br /><span class="warning">(若未收到圖書館相關 E-mail通知，不能視為減免逾期罰款或延長借出期限之理由。)</span></li>
-							<li>個人記錄之E-mail預設為學校信箱，(學生：學號@o365.fcu.edu.tw；教職員：mymail)，如欲修改，請自行登入 "個人借書帳戶" 網頁修改。</li>
-							<li>建議個人記錄之 E-mail 至少設定二個以上，以避免因網路上之各種因素導致無法收信或信件遺漏，兩個 E-mail 中間請以半型逗號分隔即可。</li>
-						</ol>
-					</li>
-				</ol>
+			<div id="blk-pat-func">
 			</div>
 		</div>
 		<div class="vcb">&nbsp;</div>
